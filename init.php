@@ -4,15 +4,13 @@
 $host = "localhost:8889";
 $user = "root";
 $pass = "root";
-$banco = "henrySuporte";
+$banco = "liberarep";
 $versao = "3.3.5";
+$titulo = "Henry Controle de Produção";
 define('DB_HOST', $host);
 define('DB_USER', $user);
 define('DB_PASS', $pass);
 define('DB_NAME', $banco);
-
-
-
 
 
 date_default_timezone_set('America/Sao_Paulo'); //DEFININDO O TIMEZONE PARA TODAS AS PÁGINAS
