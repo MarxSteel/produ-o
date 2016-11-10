@@ -65,7 +65,7 @@ require_once '../QueryDash.php';
   </aside>
 <div class="content-wrapper">
  <section class="content-header">
-  <h1>Montagem de Equipamentos<small><?php echo $titulo; ?></small></h1>
+  <h1>Equipamentos Montados por <i><code><?php echo $NomeUserLogado; ?></code></i><small><?php echo $titulo; ?></small></h1>
  </section>
  <section class="content">
   <div class="row">
