@@ -69,6 +69,185 @@ require_once '../QueryDash.php';
  </section>
  <section class="content">
   <div class="row">
+    <?php
+    if ($PermMontagem == '9') {
+     ?>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoPrismaSF">
+           <span class="info-box-icon">
+            <img src="../dist/img/relogios/Prisma_SF/PrismaSF.png" align="center" width="130" />
+           </span>
+          </a>
+          <div class="info-box-content"><br /><h4>Prisma SF</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoHexa">
+           <span class="info-box-icon">
+            <img src="../dist/img/relogios/hexa/a.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Hexa</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoPrisma">
+           <span class="info-box-icon">
+            <img src="../dist/img/relogios/Prisma/Prisma.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Prisma</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoCompacto">
+           <span class="info-box-icon">
+            <img src="../dist/img/relogios/Compacto/sis.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Compacto S</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoOrionVI">
+           <span class="info-box-icon">
+           <img src="../dist/img/relogios/Orion_6/Orion6.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Orion 6</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoOnix">
+           <span class="info-box-icon bg-red">
+           <img src="../dist/img/relogios/Velti/onix.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Velti Ônix</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoVeltiPonto">
+           <span class="info-box-icon bg-red">
+           <img src="../dist/img/relogios/Velti/velti.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Velti Ponto</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoPrimmeAcesso">
+           <span class="info-box-icon">
+           <img src="../dist/img/relogios/Primme.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Primme Acesso</h4>(8X / SF)</div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-red" onclick="window.open('Cad/09/Velti373_E1.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=750');">
+           <img src="../dist/img/relogios/Velti/velti.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Velti 373</h4>(Sem Impressora)</div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoSINDNOX">
+           <span class="info-box-icon bg-purple">
+           <img src="../dist/img/relogios/dixi/sindnox.png" align="center" width="100" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Dixi Sindnox</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoPrimmePonto">
+           <span class="info-box-icon">
+           <img src="../dist/img/relogios/Primme.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Primme Ponto</h4>(8X / SF)</div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a href="javascript::;" class="product-title"><span class="info-box-icon" onclick="window.open('Cad/12/argos.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
+           <img src="../dist/img/relogios/argos.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Argos</div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#NovoIDNOX">
+           <span class="info-box-icon bg-purple">
+           <img src="../dist/img/relogios/dixi/idnox.png" align="center" width="100" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Dixi Idnox</h4></div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-orange" onclick="window.open('Cad/Outros/7x.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
+           <img src="../dist/img/relogios/orion-cr.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Linha 7X</h4>(Card/Orion)</div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-orange" onclick="window.open('Cad/Outros/Cartografico.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
+           <img src="../dist/img/relogios/plus.png" align="center" width="130" /></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Cartográficos</h4>(PROT/PLUS)</div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+         <div class="info-box">
+          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-black" onclick="window.open('Cad/Outros/Acessorios.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
+           </span>
+          </a>
+          <div class="info-box-content"><br /><h4>Acessorios</h4></div>
+         </div>
+        </div>
+        
+        <?php
+          //CHAMANDO OS MODALS DA PAGINA
+          include 'modal/Prisma.php';
+          include 'modal/PrismaSF.php';
+          include 'modal/montagemHexaModal.php';
+          include 'modal/montagemOrionVIModal.php';
+          include 'modal/montagemVeltiPontoModal.php';
+          include 'modal/montagemIDNOXModal.php';
+          include 'modal/montagemSINDNOXModal.php';
+          include 'modal/montagemOrionAcesso.php';
+          include 'modal/montagemCard.php';
+          include 'modal/montagemPrimmePonto.php';
+          include 'modal/montagemPrimmeAcesso.php';
+          include 'modal/montagemCompactoModal.php';
+          include 'modal/montagemVeltiOnix.php';
+    }
+    else
+    {
+      echo '<div class="col-xs-12">';
+      echo '<div class="box box-widget widget-user">';
+      echo '<div class="info-box">';
+      echo '<a href="../dashboard.php"><span class="info-box-icon bg-orange">';
+      echo '<i class="fa fa-exclamation-triangle"></i></span></a>';
+      echo '<div class="info-box-content"><h4>VOCÊ NÃO TEM PERMISSÃO PARA ACESSAR ESTA PÁGINA<br />';
+      echo 'CLIQUE NO BOTÃO PARA VOLTAR PARA A PÁGINA INICIAL</h4></div>';
+      echo '</div>';
+      echo '</div>';
+      echo '</div>';
+    }
+    ?>
+
+
+
+
  </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
