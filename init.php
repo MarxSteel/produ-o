@@ -13,6 +13,9 @@ define('DB_PASS', $pass);
 define('DB_NAME', $banco);
 
 
+
+
+
 date_default_timezone_set('America/Sao_Paulo'); //DEFININDO O TIMEZONE PARA TODAS AS PÁGINAS
 
 
