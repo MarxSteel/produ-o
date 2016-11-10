@@ -9,6 +9,6 @@ $PDO = db_connect();
   $PermMontagem = $row['P2Montagem'];
   $PermReteste = $row['P2Reteste'];
   $PermAdm = $row['P2Adm'];
-  $Catraca = $row['CadCat'];
+  $Catraca = $row['CadCat'];	
 
 ?>
