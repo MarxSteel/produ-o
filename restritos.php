@@ -1,14 +1,8 @@
 <?php
-/* restritos.php */ 
-
-$titulo = "Henry Equipamentos e Sistemas - Plataforma de Rastreio";
-$versao = "1.1.1";
 session_start();
-
 if (isset($_SESSION['MeuLogin'])) { 
     $login = $_SESSION['MeuLogin']['login'];
     $hora = $_SESSION['MeuLogin']['hora'];      
-
     $chave = "1a2cf8gk68gj67gf784kh69fo6"; // chave secreca
     $ip = $_SESSION['REMOTE_ADDR']; // pegando ip do usuario
     if ($_SESSION['MeuLogin']['chave'] != md5($login . $chave . $ip . $hora)) { 
