@@ -1,6 +1,8 @@
 <?php
 /* restritos.php */ 
 
+$titulo = "Henry Equipamentos e Sistemas - Plataforma de Rastreio";
+$versao = "1.1.1";
 session_start();
 
 if (isset($_SESSION['MeuLogin'])) { 
