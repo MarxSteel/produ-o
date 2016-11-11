@@ -18,7 +18,6 @@ require_once '../QueryDash.php';
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
- <link rel="stylesheet" href="../plugins/iCheck/flat/blue.css">
 </head>
 <body class="hold-transition skin-blue-light fixed sidebar-mini">
 <div class="wrapper">
@@ -43,7 +42,7 @@ require_once '../QueryDash.php';
        </li>
        <li class="user-footer">
         <div class="pull-left">
-         <a href="user/perfil.php" class="btn btn-info">Dados de Perfil</a>
+         <a href="../user/perfil.php" class="btn btn-info">Dados de Perfil</a>
         </div>
         <div class="pull-right">
          <a href="../logout.php" class="btn btn-danger">Sair</a>
@@ -65,198 +64,252 @@ require_once '../QueryDash.php';
   </aside>
 <div class="content-wrapper">
  <section class="content-header">
-  <h1>Montagem de Equipamentos<small><?php echo $titulo; ?></small></h1>
+  <h1>Página Inicial<small><?php echo $titulo; ?></small></h1>
  </section>
  <section class="content">
   <div class="row">
     <?php
     if ($PermMontagem == '9') {
-     ?>
+     ?> 
+     <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="box box-widget widget-user">
+       <div class="info-box">
+        <a href="P2/Montagem.php" ><span class="info-box-icon btn-primary"><i class="fa fa-wrench"></i></span></a>
+        <div class="info-box-content"><h4>NOVO EQUIPAMENTO</h4></div>
+       </div>
+       <div class="box-footer no-padding">
+        <ul class="nav nav-stacked">
+         <li>
+          <a>Meta Prevista <span class="pull-right badge bg-blue"><?php echo $MetaPrevista; ?></span></a>
+         </li>
+         <li>
+          <a>Meta Alacançada <span class="pull-right badge bg-red"><?php echo $MetaRealizada; ?></span></a>
+         </li>
+      <?php 
+       echo '<li><div class="progress progress active">';
+       echo '<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:' . porcentagem_nnx ( $MetaRealizada, $MetaPrevista) . '%">';
+      ?>  
+     </ul>               
+    </div>
+   </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="P2/Pendentes.php" >
+      <span class="info-box-icon btn-danger">
+       <i class="fa fa-exclamation-triangle"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>EQUIPAMENTOS PENDENTES</h4></div>
+    </div>
+    <div class="box-footer no-padding">
+     <ul class="nav nav-stacked">
+      <li>
+       <a>Pendentes Acesso<span class="pull-right badge bg-green">
+        <?php echo $QntPendentesAcesso; ?></span></a>
+      </li>
+      <li>
+       <a>Pendentes 1510<span class="pull-right badge bg-red">
+       <?php echo $QntPendentes1510; ?></span></a>
+      </li>
+      <li>
+       <a>Pendentes 373 <span class="pull-right badge bg-blue">
+        <?php echo $QntPendentes373; ?>
+       </span></a>
+      </li>
+     </ul>
+    </div>                   
+   </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="P2/MeusEquips.php" >
+      <span class="info-box-icon bg-olive">
+       <i class="fa fa-child"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>MEUS EQUIPAMENTOS</h4></div>
+    </div>
+    <div class="box-footer no-padding">
+     <ul class="nav nav-stacked">
+      <li>
+       <a>Acesso<span class="pull-right badge bg-green">
+        <?php echo $QntMontadosAcesso; ?></span></a>
+      </li>
+      <li>
+       <a>Ponto 1510/INMETRO<span class="pull-right badge bg-red">
+       <?php echo $QntMontados1510; ?></span></a>
+      </li>
+      <li>
+       <a>Ponto 373 <span class="pull-right badge bg-blue">
+        <?php echo $QntMontados373; ?>
+       </span></a>
+      </li>
+     </ul>
+    </div>                   
+   </div>
+  </div>
+  <?php
+    }else{
 
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoPrismaSF">
-           <span class="info-box-icon">
-            <img src="../dist/img/relogios/Prisma_SF/PrismaSF.png" align="center" width="130" />
-           </span>
-          </a>
-          <div class="info-box-content"><br /><h4>Prisma SF</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoHexa">
-           <span class="info-box-icon">
-            <img src="../dist/img/relogios/hexa/a.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Hexa</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoPrisma">
-           <span class="info-box-icon">
-            <img src="../dist/img/relogios/Prisma/Prisma.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Prisma</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoCompacto">
-           <span class="info-box-icon">
-            <img src="../dist/img/relogios/Compacto/sis.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Compacto S</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoOrionVI">
-           <span class="info-box-icon">
-           <img src="../dist/img/relogios/Orion_6/Orion6.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Orion 6</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoOnix">
-           <span class="info-box-icon bg-red">
-           <img src="../dist/img/relogios/Velti/onix.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Velti Ônix</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoVeltiPonto">
-           <span class="info-box-icon bg-red">
-           <img src="../dist/img/relogios/Velti/velti.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Velti Ponto</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoPrimmeAcesso">
-           <span class="info-box-icon">
-           <img src="../dist/img/relogios/Primme.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Primme Acesso</h4>(8X / SF)</div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-red" onclick="window.open('Cad/09/Velti373_E1.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=750');">
-           <img src="../dist/img/relogios/Velti/velti.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Velti 373</h4>(Sem Impressora)</div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoSINDNOX">
-           <span class="info-box-icon bg-purple">
-           <img src="../dist/img/relogios/dixi/sindnox.png" align="center" width="100" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Dixi Sindnox</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoPrimmePonto">
-           <span class="info-box-icon">
-           <img src="../dist/img/relogios/Primme.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Primme Ponto</h4>(8X / SF)</div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a href="javascript::;" class="product-title"><span class="info-box-icon" onclick="window.open('Cad/12/argos.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
-           <img src="../dist/img/relogios/argos.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Argos</div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a data-toggle="modal" data-target="#NovoIDNOX">
-           <span class="info-box-icon bg-purple">
-           <img src="../dist/img/relogios/dixi/idnox.png" align="center" width="100" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Dixi Idnox</h4></div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-orange" onclick="window.open('Cad/Outros/7x.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
-           <img src="../dist/img/relogios/orion-cr.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Linha 7X</h4>(Card/Orion)</div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-orange" onclick="window.open('Cad/Outros/Cartografico.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
-           <img src="../dist/img/relogios/plus.png" align="center" width="130" /></span>
-          </a>
-          <div class="info-box-content"><br /><h4>Cartográficos</h4>(PROT/PLUS)</div>
-         </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-         <div class="info-box">
-          <a href="javascript::;" class="product-title"><span class="info-box-icon bg-black" onclick="window.open('Cad/Outros/Acessorios.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=650');">
-           </span>
-          </a>
-          <div class="info-box-content"><br /><h4>Acessorios</h4></div>
-         </div>
-        </div>
-        
-        <?php
-          //CHAMANDO OS MODALS DA PAGINA
-          include 'modal/Prisma.php';
-          include 'modal/PrismaSF.php';
-          include 'modal/montagemHexaModal.php';
-          include 'modal/montagemOrionVIModal.php';
-          include 'modal/montagemVeltiPontoModal.php';
-          include 'modal/montagemIDNOXModal.php';
-          include 'modal/montagemSINDNOXModal.php';
-          include 'modal/montagemOrionAcesso.php';
-          include 'modal/montagemCard.php';
-          include 'modal/montagemPrimmePonto.php';
-          include 'modal/montagemPrimmeAcesso.php';
-          include 'modal/montagemCompactoModal.php';
-          include 'modal/montagemVeltiOnix.php';
     }
-    else
-    {
-      echo '<div class="col-xs-12">';
-      echo '<div class="box box-widget widget-user">';
-      echo '<div class="info-box">';
-      echo '<a href="../dashboard.php"><span class="info-box-icon bg-orange">';
-      echo '<i class="fa fa-exclamation-triangle"></i></span></a>';
-      echo '<div class="info-box-content"><h4>VOCÊ NÃO TEM PERMISSÃO PARA ACESSAR ESTA PÁGINA<br />';
-      echo 'CLIQUE NO BOTÃO PARA VOLTAR PARA A PÁGINA INICIAL</h4></div>';
-      echo '</div>';
-      echo '</div>';
-      echo '</div>';
-    }
+    if ($PermReteste === '9') {
+    ?>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="P2/Reteste.php" >
+      <span class="info-box-icon btn-warning">
+       <i class="fa fa-refresh"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>CONTROLE DE RETESTE</h4></div>
+    </div>
+    <div class="box-footer no-padding">
+     <ul class="nav nav-stacked">
+      <li>
+       <a>Pendentes Acesso<span class="pull-right badge bg-green">
+        <?php echo $QntRetesteAcesso; ?></span></a>
+      </li>
+      <li>
+       <a>Pendentes 1510<span class="pull-right badge bg-red">
+       <?php echo $QntReteste1510; ?></span></a>
+      </li>
+      <li>
+       <a>Pendentes 373 <span class="pull-right badge bg-blue">
+        <?php echo $QntReteste373; ?>
+       </span></a>
+      </li>
+     </ul>
+    </div>                   
+   </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="P2/Quantgeral.php" >
+      <span class="info-box-icon bg-navy">
+       <i class="fa fa-server"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>QUANTIDADE GERAL</h4></div>
+    </div>
+    <div class="box-footer no-padding">
+     <ul class="nav nav-stacked">
+      <li>
+       <a>Acesso<span class="pull-right badge bg-green">
+        <?php echo $QntGeralAcesso; ?></span></a>
+      </li>
+      <li>
+       <a>Ponto 1510/INMETRO<span class="pull-right badge bg-red">
+       <?php echo $QntGeral1510; ?></span></a>
+      </li>
+      <li>
+       <a>Ponto 373 <span class="pull-right badge bg-blue">
+        <?php echo $QntGeral373; ?>
+       </span></a>
+      </li>
+     </ul>
+    </div>                   
+   </div>
+  </div>
+  <div class="col-md-3">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="Imprime/dashboard.php" >
+      <span class="info-box-icon bg-olive">
+       <i class="fa fa-print"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>IMPRESSORA</h4></div>
+    </div>                  
+   </div>
+  </div>
+  <?php
+  }
+  else{
+  }
+  if ($Catraca === "9") {
+  ?>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="Cat/dashboard.php" >
+      <span class="info-box-icon btn-info">
+       <i class="glyphicon glyphicon-jpy"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>CATRACAS</h4></div>
+    </div>
+    <div class="box-footer no-padding">
+     <ul class="nav nav-stacked">
+      <li>
+       <a>CATRACAS<span class="pull-right badge bg-green">
+        <?php echo $QntGeralAcesso; ?></span></a>
+      </li>
+      <li>
+       <a>TOTEM<span class="pull-right badge bg-red">
+       <?php echo $QntGeral1510; ?></span></a>
+      </li>
+      <li>
+       <a>GERAL<span class="pull-right badge bg-blue">
+        <?php echo $QntGeral373; ?>
+       </span></a>
+      </li>
+     </ul>
+    </div>                   
+   </div>
+  </div>
+  <?php
+  }
+  else{
+
+  }
+  if ($PermAdm === "9") {
     ?>
 
+  <div class="col-md-3">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="adm/usuarios.php" >
+      <span class="info-box-icon bg-purple">
+       <i class="fa fa-users"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>USUÁRIOS</h4></div>
+    </div>                  
+   </div>
+  </div>
+  <div class="col-md-3">
+   <div class="box box-widget widget-user">
+    <div class="info-box">
+     <a href="#" >
+      <span class="info-box-icon bg-black">
+       <i class="fa fa-newspaper-o"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><h4>RELATÓRIOS</h4></div>
+    </div>                  
+   </div>
+  </div>
+  <?php
+  } else{
 
-
+  }
+  ?>
 
  </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
-<?php include_once 'footer.php'; ?>
+<?php include_once '../footer.php'; ?>
 
 </div>
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="../plugins/fastclick/fastclick.js"></script>
 <script src="../dist/js/app.min.js"></script>
 <script src="../dist/js/pages/dashboard.js"></script>

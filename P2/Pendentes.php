@@ -72,8 +72,7 @@ require_once '../QueryDash.php';
  </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
-<?php include_once 'footer.php'; ?>
-
+<?php include_once '../footer.php'; ?>
 </div>
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
