@@ -6,7 +6,6 @@ $user = "root";
 $pass = "root";
 $banco = "liberarep";
 $versao = "3.3.5";
-$titulo = "Henry Controle de Produção";
 define('DB_HOST', $host);
 define('DB_USER', $user);
 define('DB_PASS', $pass);
